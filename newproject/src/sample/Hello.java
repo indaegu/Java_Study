@@ -51,10 +51,10 @@ public class Hello {
     System.out.println(LIGHT_SPEED);
     System.out.println(c);
     System.out.println("안녕을 출력 " + "해보자");
-    int i = 3;
+    int iiii = 3;
     double d3 = 3.0;
     System.out.println(""); // 줄바꿈을 하는 출력문
-    System.out.printf("i = %d and double d3 = %f\n",i,d3 ); // souf 로 생성 : 출력형태를 명시해주는 출력문
+    System.out.printf("i = %d and double d3 = %f\n",iiii,d3 ); // souf 로 생성 : 출력형태를 명시해주는 출력문
 
 
 
