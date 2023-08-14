@@ -36,8 +36,4 @@ class Circle { //캡슐화 과정
       this.radius = radius;
     }
   }
-
-
-
-
 }
