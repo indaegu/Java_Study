@@ -20,7 +20,5 @@ public class InterestRate {
             i++;
         }
         System.out.printf("%d년간 평균 이자율  = %.2f%%\n",sum1.length-1,sum2/3);
-
-
     }
 }
