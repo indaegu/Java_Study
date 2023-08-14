@@ -22,6 +22,5 @@ public class Array1Demo {
         float avg = sum / number.length;
         System.out.printf("%d개 입력값의 합은 : %d\n",number.length,sum );
         System.out.printf("%d개 입력값의 평균은 : %.1f",number.length,avg );
-
     }
 }
