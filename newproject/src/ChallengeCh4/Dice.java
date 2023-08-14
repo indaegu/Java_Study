@@ -9,9 +9,7 @@ public class Dice {
     double num16 = 0.166666666666666666666666666666666666;
 
     double v = Math.random();
-    int count1 =0;
     if(v <= num16) {
-      count1++;
       return 1;
     } else if (v <= num16 * 2 && v > num16){
       return 2;
