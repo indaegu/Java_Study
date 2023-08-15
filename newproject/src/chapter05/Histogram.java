@@ -1,6 +1,6 @@
 package chapter05;
 
-import java.util.Scanner;
+import java.util.Scanner; //자동 임포트
 
 public class Histogram {
     public static void main(String[] args) {
