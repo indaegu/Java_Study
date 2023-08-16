@@ -1,4 +1,5 @@
 //23.08.16 (수) : chapter 4 확인 문제
+// 간단한 은행 UI
 package ChallengeCh4;
 
 import java.util.Scanner;
@@ -11,10 +12,10 @@ public class Ch4_7 {
         while (menu!=4){
             System.out.println("==============================");
             System.out.println("1.예금 | 2.출금 | 3.잔고 | 4.종료");
-            System.out.println("==============================\n");
+            System.out.println("==============================");
             System.out.print("선택>");
             menu = scanner.nextInt();
-            switch (menu){
+            switch (menu){ //switch문 표현식에는 double이 올수없다.
                 case 1:
                     System.out.print("예금액>");
                     long money = scanner.nextLong();
@@ -23,7 +24,11 @@ public class Ch4_7 {
                 case 2:
                     System.out.print("출금액>");
                     money = scanner.nextLong();
-                    sum -= money;
+                    if(sum>=money){
+                        sum -= money;
+                    }else {
+                        System.out.println("잔액 부족");
+                    }
                     break;
                 case 3:
                     System.out.println("잔고>" + sum);
