@@ -20,6 +20,11 @@ public class EnumEx {
             System.out.println("남자 입니다");
         }
         System.out.println(people.gender);
+        System.out.println(people.direction);
+
+        System.out.println(people.gender.getGender());
+        System.out.println(people.gender.name());
+        System.out.println(people.gender.ordinal());
     }
     static class People {
         int age;
