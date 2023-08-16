@@ -10,8 +10,11 @@ public class Array1Demo {
         int[] number = new int[5];
 
         for (int i = 0; i < number.length; i++) {
-            System.out.printf("값을 입력하세요(%d/%d) : ",i+1,number.length);
+            System.out.printf("점수를 입력하세요(%d/%d), -1을 입력하면 종료 : ",i+1,number.length);
             number[i] = input.nextInt();
+            if(number[i] == -1){
+                break;
+            }
         }
 
         int sum =0;
