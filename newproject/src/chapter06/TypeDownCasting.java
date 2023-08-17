@@ -9,6 +9,7 @@ public class TypeDownCasting {
 //    s.work();
     Student s = new Student();
     Person p = new Person();
+    Worker w =new Worker();
 
     //instanceof 연산자는 원래 인스턴스의 형이 맞는지 여부를 체크하는 키워드이다. 맞으면 true 아니면 false를 반환한다.
     System.out.println("s instanceof Student ? " + (s instanceof Student));
@@ -17,17 +18,23 @@ public class TypeDownCasting {
     System.out.println("p instanceof Object ? " + (p instanceof Object));
     downCast(p); // 자기 자신을 넘김
     downCast(s); // 자동형변환 되어 넘김
+    downCast(w);
+
   }
-  static void downCast(Person p){
+  static void downCast(Person p){ // 매개변수로 p, s, w 모두 넘어갈 수 있음
     if(p instanceof Student == true){
       Student s = (Student) p;
       s.work();
       s.whoAmI();
+    } else if(p instanceof Worker == true){
+      Worker w = (Worker) p;
+      w.work();
+      w.whoAmI();
+    } else {
+      p.whoAmI();
     }
-
   }
-
-//  static void downCast(Student p){ //만약 형변환이 안된다면 이렇게 계속 만들어줘야함
+//  static void downCast(Student p){ //만약 형변환이 안된다면 이렇게 매개변수 별로 클래스를 계속 만들어줘야함
 //
 //  }
 }
