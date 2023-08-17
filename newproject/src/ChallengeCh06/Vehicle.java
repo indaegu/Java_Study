@@ -6,10 +6,11 @@ public class Vehicle {
   int speed; // 자동차 속도
 
   public Vehicle(String color, int speed){
-
+  this.color =color;
+  this.speed =speed;
   }
   void show(){
-    System.out.println("Vehicle에서 실행된 show");
+    System.out.println("Vehicle에서 실행된 show" + this.color + this.speed);
   }
 }
 
@@ -19,10 +20,12 @@ class Car extends Vehicle{
 
   public Car(String color, int speed, int displacement, int gears) {
     super(color, speed);
+    this.displacement = displacement;
+    this.gears = gears;
   }
 
   @Override
   void show() {
-    System.out.println("Car에서 실행된 show");
+    System.out.println("Car에서 실행된 show : " + this.color + " " + this.speed + " " + this. displacement + " "+ this.gears);
   }
 }

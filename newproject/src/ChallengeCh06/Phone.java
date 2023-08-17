@@ -1,3 +1,5 @@
+// 23.08.17 (목) : 다형성 실습
+
 package ChallengeCh06;
 
 public class Phone {
@@ -15,29 +17,32 @@ public class Phone {
 class Telephone extends Phone{
   private String when;
 
+  public Telephone(String owner) {
+    super(owner);
+  }
+
   public Telephone(String owner, String when) {
     super(owner);
     this.when = when;
   }
 
   void autoAnswering(){
-    System.out.println("Telephone에서 실행된 autoAnswering");
+    System.out.println(owner + "Telephone에서 실행된 autoAnswering");
   }
 }
 
 class SmartPhone extends Telephone{
   private String game;
-  public SmartPhone(String owner, String when, String game) {
-    super(owner, when);
-    this.game = game;
+  public SmartPhone(String owner) {
+    super(owner);
   }
 
   // 2개의 매개변수를 받는 새로운 생성자. 'when'에는 기본값으로 "오늘"을 설정했습니다.
   public SmartPhone(String owner, String game) {
-    super(owner, "오늘");
+    super(owner);
     this.game = game;
   }
   void playGame(){
-    System.out.println("SmartPhone에서 실행된 playGame");
+    System.out.println(owner + game+ "SmartPhone에서 실행된 playGame");
   }
 }
