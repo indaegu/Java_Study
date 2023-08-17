@@ -41,7 +41,7 @@ class MovablePoint extends Point{
 
 
   public String toString(){
-    System.out.printf("X좌표 : %d, Y좌표 : %d, X스피드 : %d, Y스피드 : %d\n",getX() ,getY() ,getxSpeed() , getySpeed());
+    System.out.printf("X좌표 : %d, Y좌표 : %d, X스피드 : %d, Y스피드 : %d\n",super.getX() ,super.getY() ,getxSpeed() , getySpeed());
     return null;
   }
 }
