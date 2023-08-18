@@ -1,3 +1,4 @@
+//23.08.18 (금) : 6장 연습문제 20번 실습(은행 프로그램 최종)
 package ChallengeCh06;
 
 import java.util.Scanner;
@@ -14,26 +15,13 @@ public class BankApplication {
       System.out.print("선택> ");
       menu = scanner.nextInt();
       switch (menu){
-        case 1:
-          createAccount();
-          break;
-        case 2:
-          accountList();
-          break;
-        case 3:
-          depositMoney();
-          break;
-        case 4:
-          withdraw();
-          break;
-        case 5:
-          System.out.println("프로그램 종료");
-          break;
-        default:
-          System.out.println("error");
-          break;
+        case 1 -> createAccount();
+        case 2 -> accountList();
+        case 3 -> depositMoney();
+        case 4 -> withdraw();
+        case 5 -> System.out.println("프로그램 종료");
+        default -> System.out.println("error");
       }
-
     }
   }
   static int accountIndex = 0;  // 계좌를 저장할 배열의 인덱스
@@ -41,27 +29,32 @@ public class BankApplication {
     System.out.println("----------");
     System.out.println("  계좌생성  ");
     System.out.println("----------");
-    //로직 작성
     System.out.print("계좌 번호를 입력하세요: ");
     String accountNum = scanner.next();
+    // 계좌 번호 존재 검증
+    for(int i=0; i<accounts.length; i++){
+      if(accounts[i] != null && accounts[i].getAccountNumber().equals(accountNum)) {
+        System.out.println("이미 존재하는 계좌입니다");
+        return;  // 메서드 종료
+      }
+    }
     System.out.print("계좌 주인 이름을 입력하세요: ");
     String ownerName = scanner.next();
     System.out.print("초기입급액: ");
     int balance = scanner.nextInt();
-
     BankAccount newAccount = new BankAccount();
     newAccount.setAccountNumber(accountNum);
     newAccount.setAccountOwner(ownerName);
     newAccount.setBalance(balance);
-
     accounts[accountIndex++] = newAccount;
     System.out.println("계좌가 생성되었습니다.");
   }
+
+
   static void accountList(){
     System.out.println("----------");
     System.out.println("  계좌목록  ");
     System.out.println("----------");
-    //로직 작성
     for(int i=0; i<accountIndex; i++){
       System.out.println("계좌 번호: " + accounts[i].getAccountNumber() + ", 계좌 주인: " + accounts[i].getAccountOwner()+
           ", 잔액: " + accounts[i].getBalance());
@@ -71,17 +64,23 @@ public class BankApplication {
     System.out.println("----------");
     System.out.println("   예금  ");
     System.out.println("----------");
-    //로직 작성
     System.out.print("계좌 번호를 입력하세요: ");
     String accountNum = scanner.next();
-    System.out.print("입금할 금액을 입력하세요: ");
-    int amount = scanner.nextInt();
 
-    for(int i=0; i<accountIndex; i++){
-      if(accounts[i].getAccountNumber().equals(accountNum)){
-        accounts[i].deposit(amount);
-        System.out.printf("%s 계좌로 %d원 입금이 완료되었습니다.\n",accountNum,amount);
-        return;
+    for(int i=0; i<accounts.length; i++){
+      if(accounts[i] != null && accounts[i].getAccountNumber().equals(accountNum)) {
+        System.out.print("입금할 금액을 입력하세요: ");
+        int amount = scanner.nextInt();
+        for(int j=0; j<accountIndex; j++){
+          if(accounts[j].getAccountNumber().equals(accountNum)){
+            accounts[j].deposit(amount);
+            System.out.printf("%s 계좌에서 %d원 입금이 완료되었습니다. 잔액 : %d원\n",accountNum,amount,accounts[j].getBalance());
+            return;
+          }
+        }
+      } else{
+        System.out.println("존재하지 않는 계좌입니다");
+        return;  // 메서드 종료
       }
     }
   }
@@ -93,16 +92,22 @@ public class BankApplication {
     //로직 작성
     System.out.print("계좌 번호를 입력하세요: ");
     String accountNum = scanner.next();
-    System.out.print("출금할 금액을 입력하세요: ");
-    int amount = scanner.nextInt();
 
-    for(int i=0; i<accountIndex; i++){
-      if(accounts[i].getAccountNumber().equals(accountNum)){
-        accounts[i].withdraw(amount);
-        System.out.printf("%s 계좌에서 %d원 출금이 완료되었습니다.\n",accountNum,amount);
-        return;
+    for(int i=0; i<accounts.length; i++){
+      if(accounts[i] != null && accounts[i].getAccountNumber().equals(accountNum)) {
+        System.out.print("출금할 금액을 입력하세요: ");
+        int amount = scanner.nextInt();
+        for(int j=0; j<accountIndex; j++){
+          if(accounts[j].getAccountNumber().equals(accountNum)){
+            accounts[j].withdraw(amount);
+            System.out.printf("%s 계좌에서 %d원 출금이 완료되었습니다. 잔액 : %d원\n",accountNum,amount,accounts[j].getBalance() );
+            return;
+          }
+        }
+      } else{
+        System.out.println("해당 계좌 번호를 찾을 수 없습니다.");
+        return;  // 메서드 종료
       }
     }
-    System.out.println("해당 계좌 번호를 찾을 수 없습니다.");
   }
 }
