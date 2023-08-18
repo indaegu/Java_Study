@@ -1,4 +1,4 @@
-//23.08.18 (금) : 6장 연습문제 19번
+//23.08.18 (금) : 6장 연습문제 19번 변형
 package ChallengeCh06;
 
 public class AccountTest {
@@ -6,35 +6,29 @@ public class AccountTest {
     Account account = new Account();
 
     account.setBalance(10000);
-    System.out.println("현재 잔고 : " + account.getBalance());
+    System.out.println("setBalance 후 현재 잔고 : " + account.getBalance());
 
     account.setBalance(-100);
-    System.out.println("현재 잔고 : " + account.getBalance());
-  }
-}
+    System.out.println("setBalance 후 현재 잔고 : " + account.getBalance());
 
-class Account{
-  private int balance;
-  int MIN_BALANCE = 0;
-  int MAX_BALANCE = 1_000_000;
+    account.setBalance(2_000_000);
+    System.out.println("setBalance 후 현재 잔고 : " + account.getBalance());
 
-  public Account(int balance) {
-    this.balance = balance;
-  }
+    account.setBalance(300_000);
+    System.out.println("setBalance 후 현재 잔고 : " + account.getBalance());
 
-  public Account(){};
+    account.withdraw(300_000);
+    System.out.println("withdraw 후 현재 잔고 : " + account.getBalance());
 
-  public int getBalance() {
-    return balance;
-  }
+    account.withdraw(100);
+    System.out.println("withdraw 후 현재 잔고 : " + account.getBalance());
 
-  public void setBalance(int balance) {
-    if(balance >=MIN_BALANCE && balance <= MAX_BALANCE)
-    {
-      this.balance = balance;
-    }else
-    {
-      System.out.println("error");
-    }
+    account.deposit(1_000_000);
+    System.out.println("deposit 후 현재 잔고 : " + account.getBalance());
+
+    account.deposit(100);
+    System.out.println("deposit 후 현재 잔고 : " + account.getBalance());
+
+
   }
 }
