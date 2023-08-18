@@ -63,6 +63,4 @@ public class BankAccount {
         System.out.println("입금 최대 금액 초과");
       }
     }
-
-
 }
