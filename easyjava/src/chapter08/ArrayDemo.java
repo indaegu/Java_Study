@@ -7,6 +7,7 @@ public class ArrayDemo {
   public static void main(String[] args) {
     char[] a1 = {'J', 'a', 'v', 'a'};
     char[] a2 = Arrays.copyOf(a1, a1.length);
+    System.out.println(a1);
     System.out.println(a2);
 
     String[] sa = {"케이크", "애플", "도넛", "바나나"};
