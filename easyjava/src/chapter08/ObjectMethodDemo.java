@@ -1,3 +1,4 @@
+//23.08.22 (화) : 8장 getclass 예제
 package chapter08;
 
 import javax.management.monitor.MonitorSettingException;
