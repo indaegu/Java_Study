@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KOSTA_Java.iml" filepath="$PROJECT_DIR$/KOSTA_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easyjava/easyjava.iml" filepath="$PROJECT_DIR$/easyjava/easyjava.iml" />
     </modules>
   </component>
 </project>
