@@ -8,6 +8,12 @@ public class ObjectMethodDemo {
         Mouse mouse2 = new Mouse("삼성");
         System.out.println("mouse1 == mouse2 ? " + (mouse2 == mouse1));
         System.out.println("제조사가 같은가 ? " + (mouse1.equals(mouse2)));
+
+        Class c = mouse1.getClass();
+        System.out.println(c.getName());
+        System.out.println(c.getSimpleName());
+        System.out.println(c.getTypeName());
+        System.out.println(c.getPackage().getName());// 패키지의 이름만 가져온다.
     }
 }
 
@@ -25,11 +31,11 @@ class Mouse{
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Mouse){
-            if(this.name.equalsIgnoreCase(((Mouse) obj).name)){
-                return name == obj;
-            }
-        }
+        if(this==obj)return true;
+        if(obj == null || this.getClass() != obj.getClass()) return false;
+        if(this.name.equalsIgnoreCase(((Mouse)obj).name)){
+            return true;
+        }return false;
     }
 }
 
@@ -50,6 +56,14 @@ class Keyboard{
 
     public String toString() {
         return "제조사는 " + name + "인 Keyboard 입니다";
+    }
+
+    public boolean equals(Object obj) {
+        if(this==obj)return true;
+        if(obj == null || this.getClass() != obj.getClass()) return false;
+        if(this.name.equalsIgnoreCase(((Keyboard)obj).name)){
+            return true;
+        }return false;
     }
 
 }
