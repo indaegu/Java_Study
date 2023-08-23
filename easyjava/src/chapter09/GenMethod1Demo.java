@@ -12,7 +12,7 @@ public class GenMethod1Demo {
 }
 class Utils {
   public static <T> void showArray(T[] a) {
-    for (T t : a) // 하나의 showArray 메서드가 두가지 타입을 모두 받을 수 있다.
+    for (T t : a) // 하나의 showArray 메서드가 두 가지 타입을 모두 받을 수 있다.
       System.out.printf("%s ", t);
     System.out.println();
   }
