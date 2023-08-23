@@ -9,12 +9,13 @@ public class Chatting {
   void startChat(String chatId) {
     String nickName = null;
     nickName = chatId;
+    String finalNickName = nickName;
     Chat chat = new Chat() {
       @Override
       public void start() {
         while(true) {
           String inputData = "안녕하세요";
-          String message = "[" + nickName + "] " + inputData; //내부 클래스 내에서 액세스되므로 final 또는 유사 final이어야 합니다
+          String message = "[" + finalNickName + "] " + inputData; //내부 클래스 내에서 액세스되므로 final 또는 유사 final이어야 합니다
           sendMessage(message);
         }
       }
