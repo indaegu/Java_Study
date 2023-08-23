@@ -1,3 +1,4 @@
+// 23.08.23 (수) : 쉽게배우는자바 8장 확인문제 1번 응용
 package chapter08;
 
 public class PersonTest {
