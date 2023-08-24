@@ -10,7 +10,7 @@ public class Ch11_4 {
         ArrayList<Integer> scores = new ArrayList<>();
         int score = 0;
         while (true){
-            System.out.print("학생의 점수를 입력하세요 : ");
+            System.out.print("학생의 점수를 입력하세요(-1을 입력하여 종료) : ");
             score =scanner.nextInt();
             if(score >= 0){
                 scores.add(score);
@@ -21,6 +21,7 @@ public class Ch11_4 {
         System.out.println("입력 받은 학생수는 : " + scores.size() + "명");
         System.out.println("입력 받은 성적은 : " +scores);
 
+        //최고 점수 찾기
         int big =0;
         for (Integer integer : scores) {
             if (big <= integer) {
@@ -28,16 +29,17 @@ public class Ch11_4 {
             }
         }
 
+        //최고 점수 기반 점수와 등급 출력하기
         int index = 0;
         for (int num : scores) {
             if((big-10)<=num){
-                System.out.printf("%d번째 학생의 점수는 A\n",index+1);
+                System.out.printf("%d번째 학생의 점수는 %d, 등급은 A\n",index+1,scores.get(index));
                 index++;
             } else if ((big-10)>num && (big-20)<=num) {
-                System.out.printf("%d번째 학생의 점수는 B\n",index+1);
+                System.out.printf("%d번째 학생의 점수는 %d, 등급은 B\n",index+1,scores.get(index));
                 index++;
             } else{
-                System.out.printf("%d번째 학생의 점수는 C\n",index+1);
+                System.out.printf("%d번째 학생의 점수는 %d, 등급은 C\n",index+1,scores.get(index));
                 index++;
             }
         }
