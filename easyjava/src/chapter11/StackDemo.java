@@ -1,4 +1,4 @@
-// 23.08.24 (목) : 쉽게 배우는 자바 11장 (Collection) : List 컬렉션
+// 23.08.24 (목) : 쉽게 배우는 자바 11장 (Collection) : Stack
 package chapter11;
 
 import java.util.Iterator;
