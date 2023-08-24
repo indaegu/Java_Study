@@ -2,8 +2,6 @@
 package chapter11;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Ch11_1 {
     public static void main(String[] args) {
@@ -12,8 +10,7 @@ public class Ch11_1 {
         animal.add("다람쥐");
         animal.add("라마");
 
-        for (String ani :
-                animal) {
+        for (String ani : animal) {
             if (ani.length() == 2){
                 System.out.println(ani);
             }

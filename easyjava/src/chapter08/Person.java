@@ -1,9 +1,10 @@
-// 23.08.23 (수) : 쉽게배우는자바 8장 확인문제 1번 응용
 package chapter08;
 
+import java.util.Objects;
+
 public class Person {
-  String name;
-  int num;
+  private String name;
+  private int num;
 
   public Person(String name, int num) {
     this.name = name;
@@ -12,14 +13,25 @@ public class Person {
 
   @Override
   public boolean equals(Object obj) {
-    if(obj instanceof Person person){
-      if(person != null && this.num == person.num){
-        return true;
-      }else {
-        return false;
-      }
-    }else{
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
+    Person person = (Person) obj;
+    return num == person.num && (Objects.equals(name, person.name));
+  }
+
+  @Override
+  public int hashCode() {
+    int result = name != null ? name.hashCode() : 0;
+    result = 31 * result + num;
+    return result;
+  }
+
+  @Override
+  public String toString() {
+    return "Person[" + name + " : " + num + "]";
   }
 }
