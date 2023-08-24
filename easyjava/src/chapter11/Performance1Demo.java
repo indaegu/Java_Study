@@ -28,7 +28,8 @@ public class Performance1Demo {
 
         long delStartTime = System.currentTimeMillis();
         for (int i = 0; i < 100_000; i++) {
-            al.remove(i); // ArrayList는 애초에 방향 설정이 불가능한 순방향
+            al.remove(al.size()-1); // ArrayList는 애초에 방향 설정이 불가능한 순방향, 그러나 이렇게 뒤에서부터 리스트를 삭제하면 매우 빠르다!
+            //앞에서 부터 삭제한다면 앞쪽 배열을 채우기위해 뒤쪽에 있는 원소들이 모두 앞으로 이동해야하기 때문에 매우 느리다!
         }
         long delEndTime = System.currentTimeMillis();
         System.out.println("ArrayList remove 시간 : " + (delEndTime - delStartTime) + "msec");
@@ -36,7 +37,7 @@ public class Performance1Demo {
 
         long delStartTime1 = System.currentTimeMillis();
         for (int i = 0; i < 100_000; i++) {
-            ll.removeFirst();// remove(i)로 설정해서 index를 찾아 지우는것보다 removeFirst나 removeLast를 사용하면 훨씬 빠르다!
+            ll.removeLast();// remove(i)로 설정해서 index를 찾아 지우는것보다 removeFirst나 removeLast를 사용하면 훨씬 빠르다!
         }
         long delEndTime1 = System.currentTimeMillis();
         System.out.println("LinkedList remove 시간 : " + (delEndTime1 - delStartTime1) + "msec");
