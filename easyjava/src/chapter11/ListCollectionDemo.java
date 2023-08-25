@@ -35,5 +35,12 @@ public class ListCollectionDemo {
 //                return 0;
 //            }
 //        });
+
+
+        list.sort((o1, o2) -> (o1.length() - o2.length()));
+        System.out.println(list);
+
+
+
     }
 }

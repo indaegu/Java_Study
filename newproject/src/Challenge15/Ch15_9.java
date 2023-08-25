@@ -1,6 +1,6 @@
 // 23.08.25 (금) : 이것이 자바다 15장 (Collection) : 확인문제 9번
-//HashMap에 아이디(String)와 점수(Integer)가 저장되어 있습니다.
-//실행 결과와 같이 평균 점수, 최고 점수, 최고 점수를 받은 아이디를 출력하도록 코드를 작성해보세요.
+// HashMap에 아이디(String)와 점수(Integer)가 저장되어 있습니다.
+// 실행 결과와 같이 평균 점수, 최고 점수, 최고 점수를 받은 아이디를 출력하도록 코드를 작성해보세요.
 package Challenge15;
 
 import java.util.HashMap;
