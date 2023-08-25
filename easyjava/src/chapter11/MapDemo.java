@@ -22,8 +22,10 @@ public class MapDemo {
      ->: 이 기호는 람다 표현식을 나타냅니다. 왼쪽에는 매개변수가 위치하고, 오른쪽에는 실행될 코드가 위치합니다.
      System.out.print(k + "(" + n + ") "): 이 코드는 키와 값을 출력하는 코드입니다. 각 키와 값은 괄호 안에 표시되고, 키와 값 사이에는 공백이 있습니다.
     */
-// fruits.put("키위", 2);
-// fruits.remove("사과");
-// fruits.clear();
+/*
+    fruits.put("키위", 2);
+    fruits.remove("사과");
+    fruits.clear();
+*/
   }
 }
