@@ -1,6 +1,7 @@
 // 23.08.28 (월) : 쉽게배우는자바 12장 (스트림) : 매핑(매치)
 package chapter12;
 
+import java.util.Comparator;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -20,5 +21,9 @@ public class MatchDemo {
         System.out.println(arr[i] + "는 홀수가 아닙니다.");
       }
     }
+
+    System.out.println();
+    boolean na = Nation.nations.stream()
+        .allMatch(x->x.getPopulation()>=100);
   }
 }
