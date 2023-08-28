@@ -1,4 +1,4 @@
-//23/08.28 (월) : 쉽게배우는자바 12장 (스트림) : Reduce
+//23.08.28 (월) : 쉽게배우는자바 12장 (스트림) : Reduce
 package chapter12;
 
 import chapter12.Nation;
