@@ -2,7 +2,11 @@
 
 package chapter12;
 
+import java.util.function.Consumer;
+
 public class Util {
+  public static Consumer<? super String> print;
+
   public static <T> void print(T t) {
     System.out.print(t + " ");
   }
