@@ -7,7 +7,7 @@ import java.util.LinkedList;
 public class ArrayListDemo {
   public static void main(String[] args) {
     ArrayList<Integer> numbers = new ArrayList<>(); // 크기가 정해져있고 원소가 늘어남에 따라 증가함
-    // 추가 및 삭제 : 느림 (단, 미리 자바에서 생성된 크기보다 작을경우 빠름)
+    // 추가 및 삭제 : 느림 (단, 추가하려는 원소 갯수가 자바에서 미리 생성된 크기보다 작을경우 빠름)
     // 인데스 조회 : 빠름
 
     numbers.add(1); numbers.add(2); numbers.add(3); numbers.add(4); numbers.add(2);
